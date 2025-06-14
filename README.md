@@ -1,8 +1,8 @@
 # UploadFlex
 
-## Multi-Provider Image Upload API – Spring Boot
+## Multi-Provider Files Upload API – Spring Boot
 
-A flexible and extensible image upload solution for Spring Boot applications. Easily switch between providers like MinIO, AWS S3, and Cloudinary without modifying your business logic.
+A flexible and extensible files upload solution for Spring Boot applications. Easily switch between providers like MinIO, AWS S3, and Cloudinary without modifying your business logic.
 
 ### Features
 
@@ -15,11 +15,11 @@ A flexible and extensible image upload solution for Spring Boot applications. Ea
 
 ### How It Works
 
-1. A common `ImageStorageService` interface defines the contract.
+1. A common `FileService` interface defines the contract.
 2. Each provider implements this interface:
-    - `CloudinaryImageStorageService`
-    - `S3ImageStorageService`
-    - `MinioImageStorageService`
+    - `CloudinaryService`
+    - `S3Service`
+    - `MinioService`
 3. A strategy resolver maps provider keys to implementations.
 4. You can:
     - Set the default provider in `application.yml`
