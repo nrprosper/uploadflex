@@ -24,3 +24,7 @@ A flexible and extensible files upload solution for Spring Boot applications. Ea
 4. You can:
     - Set the default provider in `application.yml`
     - Override it per request using a `provider` parameter
+
+### Available Endpoints
+
+![Preview](preview/img.png)
