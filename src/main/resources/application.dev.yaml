@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: uploadflex
+
+
+cloudinary:
+  api_key: # Your Cloudinary API Key
+  api_secret: # Your Cloudinary API Secret
+  cloud_name: # Your Cloudinary Cloud Name
+
+minio:
+  url: # Your MinIo URL
+  access_key: # Your MinIo Access Key
+  secret_key: # Your MinIo Secret Key
