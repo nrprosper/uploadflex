@@ -1,7 +1,34 @@
 services:
-  server:
-    build:
-      context: .
+#  server:
+#    build:
+#      context: .
+#    ports:
+#      - 8080:8080
+
+  minio:
+    container_name: minio
+    image: minio/minio:latest
     ports:
-      - 8080:8080
+      - "9000:9000"       # MinIO API
+      - "9001:9001"       # MinIO Console
+    secrets:
+      - minio_access_key
+      - minio_secret_key
+    environment:
+      MINIO_ROOT_USER_FILE: /run/secrets/minio_access_key
+      MINIO_ROOT_PASSWORD_FILE: /run/secrets/minio_secret_key
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+
+
+volumes:
+  minio_data:
+
+secrets:
+  minio_access_key:
+    file: ./secrets/minio_access_key.txt
+  minio_secret_key:
+    file: ./secrets/minio_secret_key.txt
+
 
